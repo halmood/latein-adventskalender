@@ -9,7 +9,7 @@ const latinRiddles = [
         q: "Ich bin ein kurzes, mächtiges Wort mit nur drei Buchstaben. Ich bin das lateinische Wort für „Ich“. Ich stecke auch in vielen deutschen Fremdwörtern, die etwas mit Selbstbezogenheit zu tun haben. Kleiner Tipp: Du kennst mich vielleicht aus dem Wort, das jemanden beschreibt, der nur an sich denkt.",
         a: "EGO",
         e: "Ego bedeutet Ich. Deshalb sprechen wir von Egoismus (Selbstsucht) oder einem Egotrip! Ein perfektes Beispiel dafür, wie Latein in unserer heutigen Sprache weiterlebt.",
-        image: „bilder/tag01.jpg"
+        image: "bilder/tag01.jpg"
     },
     {
         day: 2,
