@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latein Adventskalender - Dies Adventus</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="calendar-overview">
+
+    <h1>LATEIN ADVENTSKALENDER</h1>
+    
+    <p>
+        Salvete discipuli! <br>
+        Hinter jedem Türchen verbirgt sich ein spannendes Rätsel aus der Welt der Römer. 
+        Teste dein Wissen über Götter, Alltag und Sprache.
+        <br>
+        <strong>Felix dies tibi sit!</strong> (Einen glücklichen Tag wünsche ich dir!)
+    </p>
+
+    <div id="calendar-grid">
+        <a href="#" class="advent-door" id="door-1">I</a>
+        <a href="#" class="advent-door" id="door-2">II</a>
+        <a href="#" class="advent-door" id="door-3">III</a>
+        <a href="#" class="advent-door" id="door-4">IV</a>
+        <a href="#" class="advent-door" id="door-5">V</a>
+        <a href="#" class="advent-door" id="door-6">VI</a>
+        <a href="#" class="advent-door" id="door-7">VII</a>
+        <a href="#" class="advent-door" id="door-8">VIII</a>
+        <a href="#" class="advent-door" id="door-9">IX</a>
+        <a href="#" class="advent-door" id="door-10">X</a>
+        <a href="#" class="advent-door" id="door-11">XI</a>
+        <a href="#" class="advent-door" id="door-12">XII</a>
+        <a href="#" class="advent-door" id="door-13">XIII</a>
+        <a href="#" class="advent-door" id="door-14">XIV</a>
+        <a href="#" class="advent-door" id="door-15">XV</a>
+        <a href="#" class="advent-door" id="door-16">XVI</a>
+        <a href="#" class="advent-door" id="door-17">XVII</a>
+        <a href="#" class="advent-door" id="door-18">XVIII</a>
+        <a href="#" class="advent-door" id="door-19">XIX</a>
+        <a href="#" class="advent-door" id="door-20">XX</a>
+        <a href="#" class="advent-door" id="door-21">XXI</a>
+        <a href="#" class="advent-door" id="door-22">XXII</a>
+        <a href="#" class="advent-door" id="door-23">XXIII</a>
+        <a href="#" class="advent-door" id="door-24">XXIV</a>
+    </div>
+
+    <div id="riddle-modal">
+        <div class="modal-content content-box">
+            <span class="close-btn">&times;</span>
+            
+            <img id="modal-image" src="" alt="Tagesbild" class="riddle-img">
+
+            <h2 id="modal-title">DIES X</h2>
+            
+            <div id="modal-text" class="puzzle-text">
+                Rätsel wird geladen...
+            </div>
+            
+            <button id="solution-btn" class="solution-toggle">LÖSUNG AUFDECKEN</button>
+            
+            <div id="modal-result" class="solution-box">
+                <div id="modal-answer" style="color: #B22222; font-weight: bold; font-size: 1.5em; margin-bottom: 15px;">
+                    [LÖSUNG]
+                </div>
+                <div id="modal-explanation" style="text-align: left;">
+                    [ERKLÄRUNG]
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

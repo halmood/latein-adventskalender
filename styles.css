@@ -1,0 +1,170 @@
+/* ==============================================
+   Latein-Adventskalender - Zentrale CSS-Datei
+   ============================================== */
+
+/* --- Globale Basis-Styles --- */
+* { box-sizing: border-box; }
+img { max-width: 100%; height: auto; }
+body { font-family: 'Inter', sans-serif; margin: 0; padding: 20px; }
+
+/* --- KALENDER-ÜBERSICHTSSEITE --- */
+body.calendar-overview {
+    background: linear-gradient(135deg, #2c3e50 0%, #0d1a2b 100%);
+    color: #E0E0E0;
+    text-align: center;
+}
+
+body.calendar-overview h1 {
+    color: #D4AF37;
+    margin-bottom: 40px;
+    border-bottom: 3px solid #8B0000;
+    display: inline-block;
+    padding-bottom: 15px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+body.calendar-overview p {
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+/* Responsive Grid */
+#calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 25px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(139, 0, 0, 0.5);
+}
+
+@media (max-width: 968px) { #calendar-grid { grid-template-columns: repeat(5, 1fr); } }
+@media (max-width: 768px) { #calendar-grid { grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 20px; } }
+@media (max-width: 580px) { #calendar-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 15px; } }
+@media (max-width: 400px) { #calendar-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* --- Adventskalender-Türchen --- */
+.advent-door {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    text-decoration: none;
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+    /* LOCKED */
+    background: linear-gradient(to bottom right, #545d68, #3b424d);
+    border: 2px solid #545d68;
+    box-shadow: 0 5px #2c323a;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* ACTIVE Türchen */
+.advent-door.active {
+    opacity: 1;
+    cursor: pointer;
+    pointer-events: auto;
+    background: linear-gradient(to bottom right, #B22222, #8B0000);
+    border: 3px solid #D4AF37;
+    box-shadow: 0 5px #8B0000;
+}
+.advent-door.active:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 10px 15px rgba(212, 175, 55, 0.5); }
+.advent-door.active:active { transform: translateY(-1px) scale(1.01); }
+
+/* --- Styles für Inhalte (wiederverwendet für Modal) --- */
+.content-box {
+    background-color: #fff;
+    border: 5px solid #D4AF37;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    color: #333;
+    text-align: center;
+}
+h2 { color: #8B0000; border-bottom: 2px dashed #D4AF37; padding-bottom: 15px; margin-bottom: 20px; }
+.puzzle-text { font-size: 1.15rem; line-height: 1.8; text-align: left; }
+.solution-toggle {
+    display: inline-block; margin-top: 20px; padding: 12px 30px;
+    background-color: #B22222; color: white; border-radius: 8px; border: none; cursor: pointer;
+    font-weight: bold; font-size: 1rem;
+}
+.solution-toggle:hover { background-color: #8B0000; }
+.solution-box {
+    margin-top: 20px; padding: 20px; border: 2px solid #D4AF37;
+    background-color: #fff8e1; border-radius: 8px; display: none; text-align: center;
+}
+
+/* ==============================================
+   MODAL STYLES (NEU - für SPA Funktionalität)
+   ============================================== */
+#riddle-modal {
+    display: none; /* Standardmäßig versteckt */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Dunkler Hintergrund */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    backdrop-filter: blur(3px);
+}
+
+#riddle-modal .modal-content {
+    /* Nutzt .content-box Styles, aber spezifische Größen für Modal */
+    max-width: 700px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto; /* Scrollbar wenn Inhalt zu lang */
+    position: relative;
+    padding: 30px;
+    animation: zoomIn 0.3s ease;
+}
+
+/* Schließen Button (X) */
+.close-btn {
+    color: #8B0000;
+    float: right;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 20px;
+    transition: color 0.2s;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+.close-btn:hover { color: #D4AF37; }
+
+/* Bild im Modal */
+.riddle-img {
+    max-height: 250px;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Animation für das Öffnen */
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
